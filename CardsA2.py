@@ -35,10 +35,16 @@ class Player():
     def dealCard(self):
         card = self.deck.cards.pop()
         print(card.description)
-    
+
     def printCardsLeft(self):
         print(len(self.deck.cards))
 
+    def hand(self):
+        self.hand = player_one.dealCard()
+        for cards in self.hand:
+            print(self.hand)
+
+        
 
 player_one = Player('Keira')
 #player_two = Player('Pedro')
@@ -48,6 +54,7 @@ player_one.shuffleDeck()
 player_one.printCardsLeft()
 player_one.dealCard()
 player_one.dealCard()
+player_one.hand()
 
 
 
