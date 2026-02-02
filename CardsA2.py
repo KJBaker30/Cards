@@ -40,7 +40,8 @@ class Player():
         print(len(self.deck.cards))
 
     def hand(self):
-        self.hand = player_one.dealCard()
+        self.hand = player_one.deck()
+        player_one.dealCard()
         for cards in self.hand:
             print(self.hand)
 
