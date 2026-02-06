@@ -12,19 +12,25 @@ class Card():
 
 
 class Deck():
-    def __init__(self):
+    def __init__(self,empty):
         self.cards = []
         numbers = ('A','2','3','4','5','6','7','8','9','10','J','Q','K')
         suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
         for suit in suits:
             for number in numbers:
                 self.cards.append(Card(suit, number))
+        for self.hand in Deck:
+            if empty == True:
+                self.hand == None
+            else:
+                self.hand.append(Card)
 
 
 class Player():
     def __init__(self, name):
         self.name = name
         self.deck = None
+        self.hand = Deck(empty=True)
 
     def pickupDeck(self):
         self.deck = Deck()
@@ -39,11 +45,7 @@ class Player():
     def printCardsLeft(self):
         print(len(self.deck.cards))
 
-    def hand(self):
-        self.hand = player_one.deck()
-        player_one.dealCard()
-        for cards in self.hand:
-            print(self.hand)
+    
 
         
 
