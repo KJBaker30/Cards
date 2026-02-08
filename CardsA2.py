@@ -4,46 +4,46 @@ numbers = ('A','2','3','4','5','6','7','8','9','10','J','Q','K')
 suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 
 
-class Card():
-    def __init__(self, suit, number):
+class Card(): # for each card:
+    def __init__(self, suit, number): # they will have a suit and a number 
         self.suit = suit
         self.number = number
-        self.description = self.number + ' of ' + self.suit
+        self.description = self.number + ' of ' + self.suit  # when a card needs to be defined, it will have the description: number 'of' suit.
 
 
-class Deck():
-    def __init__(self,empty):
-        self.cards = []
-        numbers = ('A','2','3','4','5','6','7','8','9','10','J','Q','K')
+class Deck(): # for each deck:
+    def __init__(self,empty): # it can hold an item (or items), or it can be empty 
+        self.cards = [] # the deck holds 'cards'
+        numbers = ('A','2','3','4','5','6','7','8','9','10','J','Q','K') 
         suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
-        for suit in suits:
-            for number in numbers:
-                self.cards.append(Card(suit, number))
-        for self.hand in Deck:
-            if empty == True:
-                self.hand == None
-            else:
-                self.hand.append(Card)
+        for suit in suits: # going through each suit for the following:
+            for number in numbers: # each suit will be paired with the following numbers
+                self.cards.append(Card(suit, number)) # the cards held in 'deck' will all gain an individual suit and number 
+        for self.hand in Deck: # there's a 'hand' in deck
+            if empty == True: # if the hand is said to be empty...
+                self.hand == None # there are no cards in the hand 
+            else: # if the hand is not empty...
+                self.hand.append(Card) # it holds cards 
 
 
-class Player():
-    def __init__(self, name):
-        self.name = name
-        self.deck = None
-        self.hand = Deck(empty=True)
+class Player(): # for each player:
+    def __init__(self, name): # the player has to have a name
+        self.name = name # players name 
+        self.deck = None # player has a deck
+        self.hand = Deck(empty=True) # player has a hand 
 
-    def pickupDeck(self):
-        self.deck = Deck()
+    def pickupDeck(self): # the action to pick up a deck
+        self.deck = Deck() # the deck that has been picked up is the same deck as defined in the ClassDeck() (holding all 52 cards)
         
-    def shuffleDeck(self):
-        random.shuffle(self.deck.cards)
+    def shuffleDeck(self): # the action to shuffle the deck held 
+        random.shuffle(self.deck.cards) # randomises the order of said deck of cards 
 
-    def dealCard(self):
-        card = self.deck.cards.pop()
-        print(card.description)
+    def dealCard(self): # the action to hand out a card 
+        card = self.deck.cards.pop() # the card has to be taken out of the deck to be handed to a player (so no repeated cards as 'pop' removes the card from the deck and doesn't then return it back to the deck (one less card in the deck, plus one card to the player))
+        print(card.description) # prints 'number 'of' suit' of the card dealt 
 
-    def printCardsLeft(self):
-        print(len(self.deck.cards))
+    def printCardsLeft(self):  # how many cards are left
+        print(len(self.deck.cards)) # prints how many cards left in the deck
 
     
 
