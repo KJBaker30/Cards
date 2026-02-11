@@ -12,18 +12,18 @@ class Card(): # for each card:
 
 
 class Deck(): # for each deck:
-    def __init__(self,empty): # it can hold an item (or items), or it can be empty 
+    def __init__(self, empty): # it can hold an item (or items), or it can be empty 
         self.cards = [] # the deck holds 'cards'
         numbers = ('A','2','3','4','5','6','7','8','9','10','J','Q','K') 
         suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
         for suit in suits: # going through each suit for the following:
             for number in numbers: # each suit will be paired with the following numbers
                 self.cards.append(Card(suit, number)) # the cards held in 'deck' will all gain an individual suit and number 
-        for self.hand in Deck: # there's a 'hand' in deck
-            if empty == True: # if the hand is said to be empty...
-                self.hand == None # there are no cards in the hand 
-            else: # if the hand is not empty...
-                self.hand.append(Card) # it holds cards 
+        # for self.hand in Deck: # there's a 'hand' in deck
+        #     if empty == True: # if the hand is said to be empty...
+        #         self.hand == None # there are no cards in the hand 
+        #     else: # if the hand is not empty...
+        #         self.hand.append(Card) # it holds cards 
 
 
 class Player(): # for each player:
@@ -44,6 +44,8 @@ class Player(): # for each player:
 
     def printCardsLeft(self):  # how many cards are left
         print(len(self.deck.cards)) # prints how many cards left in the deck
+
+    
 
     
 
