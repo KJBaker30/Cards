@@ -19,18 +19,20 @@ class Deck(): # for each deck:
         for suit in suits: # going through each suit for the following:
             for number in numbers: # each suit will be paired with the following numbers
                 self.cards.append(Card(suit, number)) # the cards held in 'deck' will all gain an individual suit and number 
-        # for self.hand in Deck: # there's a 'hand' in deck
-        #     if empty == True: # if the hand is said to be empty...
-        #         self.hand == None # there are no cards in the hand 
-        #     else: # if the hand is not empty...
-        #         self.hand.append(Card) # it holds cards 
+         
 
 
 class Player(): # for each player:
-    def __init__(self, name): # the player has to have a name
+    def __init__(self, empty, name): # the player has to have a name
         self.name = name # players name 
         self.deck = None # player has a deck
         self.hand = Deck(empty=True) # player has a hand 
+        for self.hand in Player:  # for said hand..
+            if empty == True:  # if the hand is empty..
+                self.hand == None  # it holds no cards 
+            else: # otherwise 
+                self.hand.append(Card) # the hand holds cards
+
 
     def pickupDeck(self): # the action to pick up a deck
         self.deck = Deck() # the deck that has been picked up is the same deck as defined in the ClassDeck() (holding all 52 cards)
